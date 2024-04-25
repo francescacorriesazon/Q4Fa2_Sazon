@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="userName">[enter a number between 2 and 10]</label> <br>
+    <input type="number" id="num1" name="StartValue" min="2" max="10">
+    <label for="userName">by</label>
+    <input type="number" id="num2" name="EndValue" min="2" max="10"><br><br>
+    <button onclick="Table()">Click here when ready!</button>
+    <p id="demo"></p>
+</body>
+    <script>
+function Table(){
+    var startValue = parseInt(document.getElementById("num1").value);
+    var endValue = parseInt(document.getElementById("num2").value);
+    var table = "";
+    
+       if (startValue < 2 || endValue < 2 || startValue > 10 || endValue > 10){
+       alert("Please enter numbers between 2 and 10");
+        return;
+                 }
+                 for (var i = startValue; i <= endValue; i++) {
+                for (var j = startValue; j <= endValue; j++) {
+                    table += i * j + " ";
+                }
+                table += "<br>";
+            }
+
+            document.getElementById("demo").innerHTML = table;
+    }
+
+
+    </script>
+</html>
